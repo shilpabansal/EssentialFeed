@@ -1,0 +1,10 @@
+/* 
+  Feed.strings
+  NetworkModularization
+
+  Created by Shilpa Bansal on 21/03/21.
+  
+*/
+"FEED_VIEW_TITLE" = "Meu Feed";
+"FEED_VIEW_CONNECTION_ERROR" = "Não foi possível conectar com o servidor";
+
