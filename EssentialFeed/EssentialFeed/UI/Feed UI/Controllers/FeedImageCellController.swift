@@ -26,7 +26,7 @@ final class FeedImageCellController : FeedImageView {
         return cell!
     }
     
-    func  preload () {
+    func preload () {
         delegate.didRequestImage()
     }
     
