@@ -11,12 +11,12 @@ import EventKit
  This class will be responsible for deleting the feeds from feedstore and if its successful, saves the feeds
  */
 
-final class LocalFeedLoader {
+final public class LocalFeedLoader {
     var store: FeedStore
     private let calendar = Calendar(identifier: .gregorian)
     let currentDate: () -> Date
     
-    init(store: FeedStore, currentDate: @escaping () -> Date) {
+    public init(store: FeedStore, currentDate: @escaping () -> Date) {
         self.store = store
         self.currentDate = currentDate
     }
@@ -47,7 +47,7 @@ extension LocalFeedLoader {
 
 extension LocalFeedLoader: FeedLoader {
     typealias LoadResult = FeedLoader.Result
-    func load(completion: @escaping (FeedLoader.Result) -> Void) {
+    public func load(completion: @escaping (FeedLoader.Result) -> Void) {
         store.retrieve(completion: {[weak self] result in
             guard let strongSelf = self else { return }
             switch result {

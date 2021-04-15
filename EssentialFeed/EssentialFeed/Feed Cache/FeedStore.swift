@@ -11,7 +11,7 @@ import Foundation
  */
 
 
-protocol FeedStore {
+public protocol FeedStore {
     typealias CachedFeed = (feed: [LocalFeedImage], timestamp: Date)
     
     typealias DeletionError = Result<Void, Error>
