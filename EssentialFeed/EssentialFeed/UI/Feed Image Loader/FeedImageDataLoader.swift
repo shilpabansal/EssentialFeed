@@ -4,7 +4,6 @@
 //
 //  Created by Shilpa Bansal on 15/03/21.
 //
-import UIKit
 
 public protocol FeedImageDataLoaderTask {
     func cancel()
