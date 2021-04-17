@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33176574262B0A27005A697E /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33176573262B0A27005A697E /* FeedCache.swift */; };
+		33176583262B1210005A697E /* FeedImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33176582262B1210005A697E /* FeedImageDataCache.swift */; };
 		33E4E4B32619EC2A008912E7 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E4E4A92619EC29008912E7 /* EssentialFeed.framework */; };
 		33E4E4B82619EC2A008912E7 /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E4E4B72619EC2A008912E7 /* EssentialFeedTests.swift */; };
 		33E4E4BA2619EC2A008912E7 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 33E4E4AC2619EC29008912E7 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,6 +99,7 @@
 
 /* Begin PBXFileReference section */
 		33176573262B0A27005A697E /* FeedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCache.swift; sourceTree = "<group>"; };
+		33176582262B1210005A697E /* FeedImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataCache.swift; sourceTree = "<group>"; };
 		33E4E4A92619EC29008912E7 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E4E4AC2619EC29008912E7 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		33E4E4AD2619EC29008912E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				33E4E5202619EE11008912E7 /* LocalFeedImage.swift */,
 				33E4E5242619EE11008912E7 /* LocalFeedLoader.swift */,
 				33176573262B0A27005A697E /* FeedCache.swift */,
+				33176582262B1210005A697E /* FeedImageDataCache.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				33E4E53C2619EE33008912E7 /* HTTPClientSpy.swift in Sources */,
 				33E4E4E82619ED47008912E7 /* FeedUIComposer.swift in Sources */,
 				33E4E5192619EDF6008912E7 /* FeedStoreDataModel.xcdatamodeld in Sources */,
+				33176583262B1210005A697E /* FeedImageDataCache.swift in Sources */,
 				33E4E5072619EDC2008912E7 /* MainQueueDispatchDecorater.swift in Sources */,
 				33E4E4E92619ED47008912E7 /* WeakRefVirtualProxy.swift in Sources */,
 				33E4E5012619EDBE008912E7 /* FeedErrorViewModel.swift in Sources */,
