@@ -25,7 +25,16 @@ final public class LocalFeedLoader {
 extension LocalFeedLoader {
     public typealias SaveResult = Swift.Result<Void, Error>
     
-    func saveFeedInCache(feeds: [FeedImage], timestamp: Date, completion: @escaping (SaveResult) -> Void) {
+    private func cacheInsertion(feeds: [FeedImage], timestamp: Date, completion: @escaping (SaveResult) -> Void) {
+        store.insert(feeds: feeds.toLocal(), timestamp: timestamp, completion: {[weak self] insertionResult in
+            guard self != nil else { return }
+            completion(insertionResult)
+        })
+    }
+}
+
+extension LocalFeedLoader: FeedCache {
+    public func saveFeedInCache(feeds: [FeedImage], timestamp: Date, completion: @escaping (SaveResult) -> Void) {
         store.deleteFeeds {[weak self] (deleteResult) in
             guard let strongSelf = self else { return }
             switch deleteResult {
@@ -35,13 +44,6 @@ extension LocalFeedLoader {
                 completion(.failure(error))
             }
         }
-    }
-    
-    private func cacheInsertion(feeds: [FeedImage], timestamp: Date, completion: @escaping (SaveResult) -> Void) {
-        store.insert(feeds: feeds.toLocal(), timestamp: timestamp, completion: {[weak self] insertionResult in
-            guard self != nil else { return }
-            completion(insertionResult)
-        })
     }
 }
 
