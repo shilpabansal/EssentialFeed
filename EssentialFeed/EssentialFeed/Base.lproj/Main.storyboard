@@ -10,12 +10,12 @@
         <!--My Feed-->
         <scene sceneID="XLe-t4-1Dh">
             <objects>
-                <tableViewController storyboardIdentifier="FeedViewController" id="upH-PQ-NJm" customClass="FeedViewController" customModule="NetworkModularization" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FeedViewController" id="upH-PQ-NJm" customClass="FeedViewController" customModule="EssentialFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vbv-pe-GLt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Brz-UZ-aey" customClass="ErrorView" customModule="NetworkModularization" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Brz-UZ-aey" customClass="ErrorView" customModule="EssentialFeed" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -49,7 +49,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="XuO-Le-I6Y" customClass="FeedImageCell" customModule="NetworkModularization" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="XuO-Le-I6Y" customClass="FeedImageCell" customModule="EssentialFeed" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="62" width="414" height="580"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XuO-Le-I6Y" id="D2o-kg-WZc">
@@ -94,6 +94,7 @@ Location</string>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="grm-x3-tdl">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="feed-image"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrU-Oz-JS1" userLabel="RetryButton">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
@@ -104,6 +105,7 @@ Location</string>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="feed-image"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="84k-7j-K8C" secondAttribute="height" multiplier="1:1" id="BLY-ZP-eUx"/>
                                                         <constraint firstAttribute="bottom" secondItem="FrU-Oz-JS1" secondAttribute="bottom" id="LHY-j9-V8i"/>
@@ -148,6 +150,7 @@ Description</string>
                                         <constraint firstItem="u3A-Mg-adw" firstAttribute="top" secondItem="D2o-kg-WZc" secondAttribute="topMargin" priority="999" constant="6" id="zyH-QE-0e1"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="feed-cell"/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="Ckc-Zs-wXG" id="Sj7-pY-bBf"/>
                                     <outlet property="feedImageContainer" destination="84k-7j-K8C" id="f1h-pR-zzk"/>
