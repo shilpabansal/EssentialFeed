@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol FeedRefreshViewControllerDelegate {
+public protocol FeedRefreshViewControllerDelegate {
     func didRequestFeedRefresh()
 }
 
 public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
-    var delegate: FeedRefreshViewControllerDelegate?
+    public var delegate: FeedRefreshViewControllerDelegate?
     @IBOutlet private(set) public var errorView: ErrorView?
     
-    var tableModel = [FeedImageCellController]() {
+    private var tableModel = [FeedImageCellController]() {
         didSet {
             tableView.reloadData()
         }
@@ -27,6 +27,10 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableModel.count
+    }
+    
+    public func display(cellController: [FeedImageCellController]) {
+        tableModel = cellController
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

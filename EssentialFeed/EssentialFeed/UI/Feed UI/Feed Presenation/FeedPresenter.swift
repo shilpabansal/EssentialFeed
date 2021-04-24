@@ -51,7 +51,7 @@ final public class FeedPresenter {
         loadingView.display(FeedLoadingViewModel(isLoading: false))
     }
     
-    static var title: String {
+    public static var title: String {
         return Bundle(for: FeedPresenter.self).localizedString(forKey: "FEED_VIEW_TITLE", value: nil, table: "Feed")
     }
 }
