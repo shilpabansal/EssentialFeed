@@ -34,7 +34,7 @@ public class CoreDataFeedStore: FeedStore {
         managedContext = persistentContainer.newBackgroundContext()
     }
     
-    private func perform(_ action: @escaping (NSManagedObjectContext) -> Void) {
+    func perform(_ action: @escaping (NSManagedObjectContext) -> Void) {
         let managedContext = self.managedContext
         managedContext.perform { action(managedContext) }
     }
@@ -43,7 +43,7 @@ public class CoreDataFeedStore: FeedStore {
         perform { context in
             completion(Result {
                 let managedCache = try ManagedCache.uniqueNewInstance(context: context, timestamp: timestamp)
-                managedCache.feeds = ManagedFeed.feedImages(from: feeds, in: context)
+                managedCache.feeds = ManagedFeed.images(from: feeds, in: context)
 
                 try context.save()
             })

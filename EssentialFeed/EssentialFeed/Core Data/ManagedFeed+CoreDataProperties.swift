@@ -21,7 +21,7 @@ extension ManagedFeed {
     @NSManaged var location: String?
     @NSManaged var url: URL
     @NSManaged var cache: ManagedCache?
-
+    @NSManaged var data: Data?
 }
 
 extension ManagedFeed : Identifiable {
@@ -29,15 +29,26 @@ extension ManagedFeed : Identifiable {
         return LocalFeedImage(id: id, description: imageDescription, location: location, url: url)
     }
     
-    internal static func feedImages(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
+    static func first(with url: URL, in context: NSManagedObjectContext) throws -> ManagedFeed? {
+        let request = NSFetchRequest<ManagedFeed>(entityName: entity().name!)
+        request.predicate = NSPredicate(format: "%K = %@", argumentArray: [#keyPath(ManagedFeed.url), url])
+        request.returnsObjectsAsFaults = false
+        request.fetchLimit = 1
+        return try context.fetch(request).first
+    }
+
+    static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
         return NSOrderedSet(array: localFeed.map { local in
-            let feedImage = ManagedFeed(context: context)
-            
-            feedImage.id = local.id
-            feedImage.location = local.location
-            feedImage.imageDescription = local.description
-            feedImage.url = local.url
-            return feedImage
+            let managed = ManagedFeed(context: context)
+            managed.id = local.id
+            managed.imageDescription = local.description
+            managed.location = local.location
+            managed.url = local.url
+            return managed
         })
+    }
+    
+    var local: LocalFeedImage {
+        return LocalFeedImage(id: id, description: imageDescription, location: location, url: url)
     }
 }
