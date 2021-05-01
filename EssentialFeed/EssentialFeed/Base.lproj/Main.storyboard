@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,28 +20,24 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMa-XV-Uwy">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJF-AD-JvX">
+                                    <rect key="frame" x="8" y="8" width="398" height="18"/>
+                                    <viewLayoutGuide key="safeArea" id="PUb-Cg-SxS"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
-                                    <state key="normal" title="Error label">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="hideMessage" destination="Brz-UZ-aey" eventType="touchUpInside" id="Bu9-HA-ZsG"/>
-                                    </connections>
-                                </button>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" red="0.99951404330000004" green="0.41759261489999999" blue="0.4154433012" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <gestureRecognizers/>
                             <constraints>
-                                <constraint firstItem="YMa-XV-Uwy" firstAttribute="leading" secondItem="Brz-UZ-aey" secondAttribute="leading" id="DHU-ok-Zma"/>
-                                <constraint firstAttribute="bottom" secondItem="YMa-XV-Uwy" secondAttribute="bottom" id="GYc-7h-sQP"/>
-                                <constraint firstAttribute="trailing" secondItem="YMa-XV-Uwy" secondAttribute="trailing" id="To8-ha-QQI"/>
-                                <constraint firstItem="YMa-XV-Uwy" firstAttribute="top" secondItem="Brz-UZ-aey" secondAttribute="top" id="uLr-dO-OfA"/>
+                                <constraint firstItem="QJF-AD-JvX" firstAttribute="top" secondItem="Brz-UZ-aey" secondAttribute="top" constant="8" id="9fG-k4-OdY"/>
+                                <constraint firstAttribute="bottom" secondItem="QJF-AD-JvX" secondAttribute="bottom" constant="8" id="L6P-0R-jAp"/>
+                                <constraint firstItem="QJF-AD-JvX" firstAttribute="leading" secondItem="Brz-UZ-aey" secondAttribute="leading" constant="8" id="Rdh-rX-9aN"/>
+                                <constraint firstAttribute="trailing" secondItem="QJF-AD-JvX" secondAttribute="trailing" constant="8" id="Ubr-Bz-z2J"/>
                             </constraints>
                             <connections>
-                                <outlet property="button" destination="YMa-XV-Uwy" id="dD7-Vr-OAS"/>
+                                <outlet property="label" destination="QJF-AD-JvX" id="yte-6M-qab"/>
                             </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Mnn-zt-AZ0" userLabel="FooterView">

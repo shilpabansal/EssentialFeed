@@ -21,16 +21,17 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         }
     }
     
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.sizeTableHeaderViewToFit()
+    }
+    
     public override func viewDidLoad() {
         refresh()
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableModel.count
-    }
-    
-    public func display(cellController: [FeedImageCellController]) {
-        tableModel = cellController
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,12 +60,16 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         cellController(forRowAt: indexPath).cancelLoad()
     }
     
-    public func display(_ loadingViewModel: FeedLoadingViewModel) {
-        refreshControl?.update(isRefreshing: loadingViewModel.isLoading)
-    }
-    
     @IBAction func refresh() {
         delegate?.didRequestFeedRefresh()
+    }
+    
+    public func display(_ cellController: [FeedImageCellController]) {
+        tableModel = cellController
+    }
+    
+    public func display(_ loadingViewModel: FeedLoadingViewModel) {
+        refreshControl?.update(isRefreshing: loadingViewModel.isLoading)
     }
     
     public func display(_ viewModel: FeedErrorViewModel) {
