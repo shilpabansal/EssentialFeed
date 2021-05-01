@@ -26,8 +26,8 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
         view.display(FeedImageViewModel(location: model.location,
                                         description: model.description,
                                         image: nil,
-                                        showRetry: false,
-                                        isLoading: true))
+                                        isLoading: true,
+                                        showRetry: false))
     }
     
     public func didFinishLoadingImageData(with data: Data,for model: FeedImage) {
@@ -39,15 +39,15 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
         view.display(FeedImageViewModel(location: model.location,
                                         description: model.description,
                                         image: image,
-                                        showRetry: false,
-                                        isLoading: false))
+                                        isLoading: false,
+                                        showRetry: false))
     }
     
     public func didFinishLoadingImageData(with error: Error,for model: FeedImage) {
        view.display(FeedImageViewModel(location: model.location,
                                         description: model.description,
                                         image: nil,
-                                        showRetry: true,
-                                        isLoading: false))
+                                        isLoading: false,
+                                        showRetry: true))
     }
 }
